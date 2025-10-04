@@ -228,6 +228,53 @@
 @keyframes circle-11 { 33% { transform: translate(4px, 4px) translateZ(0); } 66% { transform: translate(68px, 20px) translateZ(0); } }
 @keyframes circle-12 { 33% { transform: translate(56px, 0px) translateZ(0); } 66% { transform: translate(60px, -32px) translateZ(0); } }
 </style>
+<style>
+/* --- Updates v2: Nav-Extras, größere Extras-Überschrift, Separator, CTA zentriert, Balken weg --- */
+.gradient-title { font-size: 2.1rem; }
+.extras-title { margin-top: 1rem; }
+
+/* Gradient-Separator */
+.gradient-separator {
+  height: 4px;
+  width: min(920px, 92%);
+  margin: 0.75rem auto 0.75rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff7a00, #ff0033, #ff3ea5, #7c3aed);
+}
+
+/* CTA Button mittig */
+.cta-bottom { text-align: center; }
+.cta-bottom a { display: inline-block; }
+
+/* Weißer Balken direkt unter Quellen ausblenden */
+:is(#quellen, .quellen, .sources) + hr,
+:is(#quellen, .quellen, .sources) + [role="separator"],
+:is(#quellen, .quellen, .sources) + div {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: none !important;
+}
+
+/* Projektzeile kompakter */
+.project-note {
+  text-align: center;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Nav-Link mit Gradient */
+.nav-gradient {
+  background: linear-gradient(90deg, #ff7a00, #ff0033, #ff3ea5, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  font-weight: 700;
+}
+</style>
 </head>
 <body>
   <!-- Scroll Progress -->
@@ -245,7 +292,8 @@
         <a href="#folgen">Folgen</a>
         <a href="#bewertung">Bewertung</a>
         <a href="#karten">Karten</a>
-      </nav>
+      <a href="#extras" class="nav-gradient">Extras</a>
+</nav>
     </div>
   </header>
 
@@ -459,10 +507,11 @@
 
   <footer class="site-footer glass">
     <div class="container">
-      <p>Projekt aus der Q1 von Kian, Till, Mark und Danush. © 2025</p>
+      <p class="project-note">Projekt aus der Q1 von Kian, Till, Mark und Danush. © 2025</p>
     </div>
   
-<h2 class="gradient-title">Extras</h2>
+<div class="gradient-separator"></div>
+<h2 id="extras" class="gradient-title extras-title">Extras</h2>
 <section id="video-section" class="video-section">
   <h2>zu faul zum lesen? Dann schau dir dieses Video an.</h2>
   <video controls preload="metadata" class="video-player" poster="" width="960">
