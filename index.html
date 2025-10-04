@@ -275,6 +275,26 @@
   font-weight: 700;
 }
 </style>
+<style>
+/* --- Update v3: Nav Stern statt Text --- */
+.nav-star {
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0 .25rem;
+  margin-left: auto; /* schiebt nach rechts bei Flex-Navigation */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+.nav-star .star {
+  display: inline-block;
+  transform: translateY(-1px);
+}
+@media (max-width: 900px) {
+  .nav-star { font-size: .95rem; }
+}
+</style>
 </head>
 <body>
   <!-- Scroll Progress -->
@@ -292,7 +312,7 @@
         <a href="#folgen">Folgen</a>
         <a href="#bewertung">Bewertung</a>
         <a href="#karten">Karten</a>
-      <a href="#extras" class="nav-gradient">Extras</a>
+      <a href="#extras" class="nav-gradient nav-star" aria-label="Extras" title="Extras"><span class="star">★</span></a>
 </nav>
     </div>
   </header>
